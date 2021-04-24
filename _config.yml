@@ -1,1 +1,10 @@
 theme: jekyll-theme-hacker
+
+title: "m42e's blog"
+author: 
+  name: Matthias Bilger
+  email: matthias@bilger.info
+
+paginate: 40
+owner: Matthias Bilger
+year: 2021
