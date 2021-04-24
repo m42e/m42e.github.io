@@ -1,5 +1,5 @@
 ---
-title: What are Inline Namespaces
+title: What are Inline Namespaces?
 published: true
 ---
 
