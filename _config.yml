@@ -1,10 +1,11 @@
-theme: jekyll-theme-hacker
-
 title: "m42e's blog"
+description: "Blog about software development"
 author: 
   name: Matthias Bilger
   email: matthias@bilger.info
 
 paginate: 40
+
+# Custom variables
 owner: Matthias Bilger
 year: 2021
