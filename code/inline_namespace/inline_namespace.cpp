@@ -1,11 +1,3 @@
-# Some thing about C++
-
-## What are inline namespaces?
-Inline namespaces are transparent for those who are using the outer namespace.
-
-A simple example:
-
-```cpp
 #include <iostream>
 namespace m42e {
 namespace cpp {
@@ -18,18 +10,14 @@ const int32_t my23 = 23;
 }  // namespace cpp
 }  // namespace m42e
 
-int main() { 
-  // this works for sure
+int main() {
   std::cout << m42e::cpp::test::my42 << std::endl;
   std::cout << m42e::cpp::test::nested::my23 << std::endl;
   {
     using namespace m42e::cpp::test;
-    // of course we can use my42 here
+    // as nested is inline, it is somehow "transparent"
     std::cout << my42 << std::endl;
-    // as nested is inline it is "transparent"
     std::cout << my23 << std::endl;
   }
-  
-  return 0; 
+  return 0;
 }
-```
