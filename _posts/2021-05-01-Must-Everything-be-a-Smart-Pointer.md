@@ -1,7 +1,13 @@
 ---
 title: Must Everything be a Smart Pointer?
-published: false
+published: true
 ---
+
+##[](#when-no-to-use)TL;DR
+
+If you pass a smart pointer you include some ownership, a raw pointer doesn't. But use it for every allocation.
+
+##[](#only-smart-pointer)Should we only use smart pointers?
 
 During rewriting of a legacy `C` codebase to `C++` I have been asked if everything should be changed to a smart pointer. I replied with "Why should we do that?" and the response was "because we wanted to be modern". 
 
@@ -25,8 +31,9 @@ Still, every owner could pass the raw pointer of the shared object around. The i
 
 
  
-##[](#example)Example in real life
+##[](#example)Compared to things in real life
 
-Lets explain with using something familiar, a cellphone number. Generally speaking there is only one owner of a cellphone number at a point in time. You may pass the mobile phone with the SIM card the number is bound, but then you do not have access to the number any more. So the SIM is kind `std::unique_ptr`. (I know about multisim, but keep it simple). You still can pass your mobile phone to somebody else to make a call. It remains yours.
+Lets explain with using something familiar, a cellphone number. Generally speaking there is only one owner of a cellphone number at a point in time. You may pass the mobile phone with the SIM card the number is bound, but then you do not have access to the number any more. So the SIM is kind `std::unique_ptr`. (I know about multisim, but keep it simple). You still can pass your mobile phone to somebody else to make a call. It remains yours. And if you do not care anymore (your unique_ptr goes out of scope), the number is freed and you do not have to take care of it.
 
-On the other hand, lets assume you share a flat with two other people. The flat has a landline. This means, the landline is a `std::shared_ptr`. All three of you kind of own the landline. So you can only cancel it if all agree and do not take care anymore. Even your landline does not have a built in counter of users it is pretty much the same.
+On the other hand, lets assume you share a flat with two other people. The flat has a landline. This means, the landline is a `std::shared_ptr`. All three of you kind of own the landline. As long as at least one of you care about it (own a shared_ptr) it won't get canceled.
+
