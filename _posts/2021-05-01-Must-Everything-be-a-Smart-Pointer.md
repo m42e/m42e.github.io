@@ -3,11 +3,11 @@ title: Must Everything be a Smart Pointer?
 published: true
 ---
 
-##[](#when-no-to-use)TL;DR
+## [](#when-no-to-use)TL;DR
 
 If you pass a smart pointer you include some ownership, a raw pointer doesn't. But use it for every allocation.
 
-##[](#only-smart-pointer)Should we only use smart pointers?
+## [](#only-smart-pointer)Should we only use smart pointers?
 
 During rewriting of a legacy `C` codebase to `C++` I have been asked if everything should be changed to a smart pointer. I replied with "Why should we do that?" and the response was "because we wanted to be modern". 
 
@@ -15,7 +15,7 @@ Oh dear. That was not what I wanted to have by stating that we want to have a mo
 
 And here comes why. It has been explained for sure a few hundred times across the web, but I think it is worth explaining it one more time, so more people probably read it at some time.
 
-##[](#unique)Unique Pointer
+## [](#unique)Unique Pointer
 
 In case of a `std::unique_ptr` it seems to be a bit more obvious. This one clearly states, that there is only one of it, cannot be copied, only moved around. So most programmers are aware of that and use it with care. Did I say care? I mean they do not use it most of the time, because they cannot pass it to a function without moving it. But is that true? Well it depends.
 
@@ -23,7 +23,7 @@ As `std::unique_ptr` does not have a copy or copy-assignment constructor you can
 
 Well I think you misunderstood the concept. The `std::unique_ptr` is meant to be unique in a way, that is has exactly **one** owner at any point in time. And if the owner does not take care of the object referenced it will be deleted. The important part here is the owner. 
 
-##[](#unique)Shared Pointer
+## [](#unique)Shared Pointer
 
 A `std::shared_ptr` describes a object that is shared. Sharing means it has **at least one** owner but probably more. And these owners may leave the object alone at different times not synchronized. So the object must be there till the last one looses interest and the `std::shared_ptr` gets destructed.
 
@@ -31,7 +31,7 @@ Still, every owner could pass the raw pointer of the shared object around. The i
 
 
  
-##[](#example)Compared to things in real life
+## [](#example)Compared to things in real life
 
 Lets explain with using something familiar, a cellphone number. Generally speaking there is only one owner of a cellphone number at a point in time. You may pass the mobile phone with the SIM card the number is bound, but then you do not have access to the number any more. So the SIM is kind `std::unique_ptr`. (I know about multisim, but keep it simple). You still can pass your mobile phone to somebody else to make a call. It remains yours. And if you do not care anymore (your unique_ptr goes out of scope), the number is freed and you do not have to take care of it.
 
