@@ -13,4 +13,4 @@ I do not like to do repeated tasks by hand, I am awfully lazy and I like playing
 
 Besides tech I hope to be able to inspire people and help them to get better whatever they want to do. 
 
-Besides that I am into Dungeons and Dragons and I like cooking (maybe because it basically is executing algorithms). 
+Besides that I am into Dungeons & Dragons, I like cooking (maybe because it basically is executing algorithms) and doing experiments with my daughter. 
