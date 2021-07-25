@@ -14,4 +14,6 @@ I do not like to do repeated tasks by hand, I am awfully lazy and I like playing
 I like to make things better than today. This starts with software and tests, but does not end there. Better processes, better experience, more trust in each other. I appreciate teamwork not competition.
 I hope to be able to inspire people and help them to get better whatever they want to do. And so do I, looking for new fields to explore, olds to get better. 
 
+I love taking risks, I love taking responsibility. I will fail for sure. But I succeed more often. I do not have a problem being known to fail something. But I would really be humiliated by not taking a chance of improvement.
+
 Besides that I am into Dungeons & Dragons, I like cooking (maybe because it basically is executing algorithms) and doing experiments with my daughter. 
